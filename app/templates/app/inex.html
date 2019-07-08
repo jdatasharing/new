@@ -1,0 +1,130 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input{
+            color: blue;
+            font-size: 200%;
+        }
+        label{
+            color:pink;
+            font-size: 200%;
+        }
+        body{
+            background: url("{% static '/app/images/re.jpg' %}")
+    }
+        span{
+         color:red;
+     }
+    </style>
+    <script>
+        function check_fanme(){
+            var f=document.frm.fname.value;
+            var reg= /^[a-zA-Z]+$/
+            if(f.trim()==""){
+                document.getElementById("fname").innerHTML="please enter fname";
+
+            } 
+            else if(!reg.test(f)){
+                document.getElementById("fname").innerHTML="please enter only alphabate";
+            } 
+            else{
+                document.getElementById("fname").innerHTML="";
+            }    
+            
+          }
+            function check_lname(){
+            var l=document.frm.lname.value;
+            var reg= /^[a-zA-Z]+$/
+            if(l.trim()==""){
+                document.getElementById("lname").innerHTML="please enter  lname";
+
+            } 
+            else if(!reg.test(l)){
+                document.getElementById("lname").innerHTML="please enter only alphabate";
+            } 
+            else{
+                document.getElementById("lname").innerHTML="";
+            }      }
+            function check_con(){
+            var l=document.frm.con.value;
+            var reg= /^[0-9]+$/
+            if(l.trim()==""){
+                document.getElementById("con").innerHTML="please enter valid number";
+
+            } 
+            else if(!reg.test(l)){
+                document.getElementById("con").innerHTML="please enter only number";
+            } 
+            else{
+                document.getElementById("con").innerHTML="";
+            }      }
+            function check_mail(){
+            var l=document.frm.mail.value;
+            var reg= /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+            if(l.trim()==""){
+                document.getElementById("mail").innerHTML="please enter valid number";
+
+            } 
+            else if(!reg.test(l)){
+                document.getElementById("mail").innerHTML="please enter only number";
+            } 
+            else{
+                document.getElementById("mail").innerHTML="";
+            }      }
+    </script>
+</head>
+<body>
+    
+    <form action="" name="frm">
+     <table align="center">
+         <tr>
+             <td><label>firstname</label></td>
+             <td><input type="text" name="fname" onblur="check_fanme();"></td>
+             <td>
+                 <span id="fname"></span>
+             </td>
+         </tr>
+         <tr>
+                <td><label>lastname</label></td>
+                <td><input type="" name="lname" onblur="check_lname();"></td>
+                <td>
+                <span id="lname"></span> 
+                </td>
+            </tr><tr>
+                    <td><label>contact</label></td>
+                    <td><input type="text" name="con" onblur="check_con();" ></td>
+                    <td>
+                        <span id="con"></span>
+                    </td>
+                </tr><tr>
+                        <td><label>email</label></td>
+                        <td><input type="text" name="mail" onblur="check_mail();"></td>
+                        <td>
+                                <span id="mail"></span>
+                            </td>
+                    </tr><tr>
+                            <td><label>password</label></td>
+                            <td><input type="password" name="password"></td>
+                        </tr><tr>
+                    <tr>
+                            
+                            <td><input type="submit" name="submit"></td>
+                        </tr>
+                                  
+     </table>
+
+
+
+
+
+
+    </form>
+</body>
+</html>

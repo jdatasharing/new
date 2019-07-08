@@ -1,0 +1,62 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input{
+            color:black;
+            font-size: 200%;
+
+        }
+        body{
+            
+            background: url("{% static '/app/images/flag.jpg'  %}")
+        }
+        label{
+            font-size: 150%;
+            color:white;
+        }
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+}
+       
+    </style>
+    
+</head>
+<body>
+    <form action="{% url 'user' %}" method="POST">
+        {% csrf_token%}
+    <table align="left">
+<tr>
+    <td><label>TeamName</label></td>
+    <td><input type="text" name="tname"></td>
+</tr>
+<tr>
+        <td><label>CaptainName</label></td>
+        <td><input type="text" name="cname"></td>
+    </tr>
+    <tr>
+            <td><label>CouchName</label></td>
+            <td><input type="text" name="hname"></td>
+        </tr>
+        <tr>
+                <td><label>ownername</label></td>
+                <td><input type="text" name="oname"></td>
+            </tr> <tr>
+                    <td><label>Email</label></td>
+                    <td><input type="text" name="email"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" name="register">
+                    </td>
+                </tr>
+         
+     </table></form>
+</body>
+</html>

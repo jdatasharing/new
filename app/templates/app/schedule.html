@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title><style>
+    input{
+        color:black;
+        font-size: 200%;
+
+    }
+    body{
+        background: url("{% static '/app/images/play.jpg'  %}")
+        
+    }
+      
+    label{
+        font-size: 150%;
+        color:black;
+    }
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+    </style>
+</head>
+<body>
+   
+    <form action="{% url 'user1' %}" method="POST">
+    {% csrf_token %}
+
+        <table>
+            <tr>
+                <td><label>
+                    match
+                </label></td>
+                <td><input type="text" name="match"></td>
+
+            </tr>
+            <tr>
+                    <td><label>
+                        team1
+                    </label></td>
+                    <td><input type="text" name="team1"></td>
+                    
+                </tr> <tr>
+                        <td><label>
+                            team2
+                        </label></td>
+                        <td><input type="text" name="team2"></td>
+                        
+                    </tr>
+                    <tr>
+                            <td><label>
+                                ground
+                            </label></td>
+                            <td><input type="text" name="ground"></td>
+                            
+                        </tr>
+                        <tr>
+                               <tr>
+                                <td><input type="submit" name="submit"></td>
+                            
+                            </tr>
+        </table>
+    </form>
+</body>
+</html>
